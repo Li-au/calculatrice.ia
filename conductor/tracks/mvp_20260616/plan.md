@@ -8,7 +8,7 @@ Test runner : Node.js natif (`node --test`), aucune dépendance externe, conform
 
 ## Phase 1 — Squelette du projet et champ central
 
-- [ ] **Tâche 1.1 :** Créer la structure de fichiers (`index.html`, `style.css`, `script.js`) avec le champ central affiché sur fond blanc
+- [x] **Tâche 1.1 :** Créer la structure de fichiers (`index.html`, `style.css`, `script.js`) avec le champ central affiché sur fond blanc `[dff78b8]`
 - [ ] **Tâche 1.2 :** Implémenter le déploiement animé du clavier de calculatrice au clic/focus du champ (et sa fermeture en cliquant à l'extérieur)
 
 ### Phase Completion Checkpoint — Phase 1
