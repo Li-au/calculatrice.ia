@@ -1,6 +1,8 @@
 const display = document.getElementById('display');
 const wrapper = document.getElementById('calculator-wrapper');
 const keypad = document.getElementById('keypad');
+const explainButton = document.getElementById('explain-button');
+const explanation = document.getElementById('explanation');
 
 function openKeypad() {
   keypad.classList.add('open');
@@ -18,7 +20,17 @@ document.addEventListener('mousedown', (event) => {
   }
 });
 
+function hideExplanation() {
+  explanation.hidden = true;
+}
+
+function showExplanation(steps) {
+  explanation.innerHTML = steps.map((step) => `<p>${step}</p>`).join('');
+  explanation.hidden = false;
+}
+
 function handleKeyPress(key) {
+  hideExplanation();
   if (key === 'C') {
     display.value = '';
     return;
@@ -40,7 +52,15 @@ function handleKeyPress(key) {
 
 keypad.addEventListener('click', (event) => {
   const button = event.target.closest('button');
-  if (button) {
+  if (button && button.dataset.key) {
     handleKeyPress(button.dataset.key);
+  }
+});
+
+explainButton.addEventListener('click', () => {
+  try {
+    showExplanation(explainExpression(display.value));
+  } catch {
+    showExplanation(['Calcul invalide.']);
   }
 });

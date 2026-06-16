@@ -1,4 +1,4 @@
-const TOKEN_PATTERN = /(\d+\.?\d*|[+−×÷%])/g;
+const EXPLAIN_TOKEN_PATTERN = /(\d+\.?\d*|[+−×÷%])/g;
 
 /**
  * @param {string} expression A calculator expression built from digits and
@@ -10,7 +10,7 @@ const TOKEN_PATTERN = /(\d+\.?\d*|[+−×÷%])/g;
  * @throws {Error} If the expression is malformed or divides by zero.
  */
 function explainExpression(expression) {
-  const tokens = (expression.match(TOKEN_PATTERN)) || [];
+  const tokens = (expression.match(EXPLAIN_TOKEN_PATTERN)) || [];
   if (tokens.length === 0) {
     throw new Error('Expression invalide');
   }
@@ -20,7 +20,7 @@ function explainExpression(expression) {
   for (const token of tokens) {
     if (token === '%') {
       const previous = withPercentagesApplied.pop();
-      if (previous === undefined || isOperator(previous)) {
+      if (previous === undefined || isOperatorForExplain(previous)) {
         throw new Error('Expression invalide');
       }
       const percentValue = Number(previous) / 100;
@@ -31,8 +31,8 @@ function explainExpression(expression) {
     }
   }
 
-  if (withPercentagesApplied.length === 0 || isOperator(withPercentagesApplied[0]) ||
-      isOperator(withPercentagesApplied[withPercentagesApplied.length - 1])) {
+  if (withPercentagesApplied.length === 0 || isOperatorForExplain(withPercentagesApplied[0]) ||
+      isOperatorForExplain(withPercentagesApplied[withPercentagesApplied.length - 1])) {
     throw new Error('Expression invalide');
   }
 
@@ -40,10 +40,10 @@ function explainExpression(expression) {
   for (let i = 1; i < withPercentagesApplied.length; i += 2) {
     const operator = withPercentagesApplied[i];
     const operand = withPercentagesApplied[i + 1];
-    if (!isOperator(operator) || operand === undefined || isOperator(operand)) {
+    if (!isOperatorForExplain(operator) || operand === undefined || isOperatorForExplain(operand)) {
       throw new Error('Expression invalide');
     }
-    const newResult = applyOperator(result, operator, Number(operand));
+    const newResult = applyOperatorForExplain(result, operator, Number(operand));
     steps.push(`${result} ${operator} ${operand} = ${newResult}`);
     result = newResult;
   }
@@ -51,11 +51,11 @@ function explainExpression(expression) {
   return steps;
 }
 
-function isOperator(token) {
+function isOperatorForExplain(token) {
   return token === '+' || token === '−' || token === '×' || token === '÷';
 }
 
-function applyOperator(left, operator, right) {
+function applyOperatorForExplain(left, operator, right) {
   switch (operator) {
     case '+':
       return left + right;

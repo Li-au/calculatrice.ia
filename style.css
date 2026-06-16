@@ -44,7 +44,7 @@ body {
 
 .keypad.open {
   margin-top: 12px;
-  max-height: 320px;
+  max-height: 400px;
   opacity: 1;
 }
 
@@ -76,4 +76,26 @@ body {
 
 .key-clear {
   color: #d93025;
+}
+
+.key-explain {
+  background: #fff;
+  border: 1px solid #4d90fe;
+  color: #4d90fe;
+  grid-column: span 4;
+}
+
+.key-explain:hover {
+  background: #eaf1ff;
+}
+
+.explanation {
+  color: #3c4043;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.explanation p {
+  margin: 0 0 4px;
 }
