@@ -8,8 +8,12 @@ body {
   margin: 0;
 }
 
-.search-bar {
+.calculator-wrapper {
   width: 320px;
+}
+
+.search-bar {
+  width: 100%;
 }
 
 #display {
@@ -26,4 +30,47 @@ body {
 #display:focus {
   border-color: #4d90fe;
   outline: none;
+}
+
+.keypad {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(4, 1fr);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.keypad.open {
+  margin-top: 12px;
+  max-height: 320px;
+  opacity: 1;
+}
+
+.keypad button {
+  background: #f1f3f4;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 16px 0;
+}
+
+.keypad button:hover {
+  background: #e8eaed;
+}
+
+.key-equals {
+  background: #4d90fe;
+  color: #fff;
+  grid-column: span 4;
+}
+
+.key-equals:hover {
+  background: #357ae8;
+}
+
+.key-clear {
+  color: #d93025;
 }
