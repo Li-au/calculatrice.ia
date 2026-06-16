@@ -1,0 +1,7 @@
+{
+  "track_id": "mvp_20260616",
+  "title": "MVP - Calculatrice IA jouable de bout en bout",
+  "status": "planned",
+  "created_at": "2026-06-16",
+  "description": "Premier track : champ central déroulant la calculatrice, calcul classique, bouton 'Expliquer' relié à l'API Claude via fonction serverless Vercel, déploiement."
+}
