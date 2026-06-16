@@ -15,7 +15,7 @@ Test runner : Node.js natif (`node --test`), aucune dépendance externe, conform
 
 ---
 
-## Phase 2 — Logique de calcul
+## Phase 2 — Logique de calcul `[checkpoint: 0cb0753]`
 
 - [x] **Tâche 2.1 :** Écrire les tests pour une fonction pure `evaluateExpression(expression)` (addition, soustraction, multiplication, division, pourcentage, gestion des expressions invalides) `[508dadf]`
 - [x] **Tâche 2.2 :** Implémenter `evaluateExpression` `[508dadf]`
