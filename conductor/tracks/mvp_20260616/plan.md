@@ -1,4 +1,4 @@
-# Plan - MVP - Calculatrice IA jouable de bout en bout
+# Plan - MVP - Calculatrice jouable de bout en bout
 
 Suit le workflow défini dans `conductor/workflow.md` (TDD : test rouge → implémentation → vert → commit par tâche, checkpoint de fin de phase).
 
@@ -25,11 +25,14 @@ Test runner : Node.js natif (`node --test`), aucune dépendance externe, conform
 
 ---
 
-## Phase 3 — Fonction serverless et bouton "Expliquer"
+## Phase 3 — Bouton "Expliquer" (décomposition locale, gratuite)
 
-- [ ] **Tâche 3.1 :** Créer `api/explain.js` (fonction serverless Vercel) qui reçoit un calcul et appelle l'API Claude via `fetch` natif avec `ANTHROPIC_API_KEY`
-- [ ] **Tâche 3.2 :** Brancher le bouton "Expliquer" sur `/api/explain`, avec état de chargement et affichage de l'explication
-- [ ] **Tâche 3.3 :** Gérer les erreurs (calcul invalide avant envoi, échec de l'appel API) avec un message simple à l'utilisateur
+Extension de scope décidée le 2026-06-16 (voir `spec.md`) : remplace l'intégration API Claude initialement prévue par une décomposition algorithmique locale, sans coût ni backend.
+
+- [ ] **Tâche 3.1 :** Écrire les tests pour une fonction pure `explainExpression(expression, result)` qui décompose le calcul en étapes lisibles
+- [ ] **Tâche 3.2 :** Implémenter `explainExpression`
+- [ ] **Tâche 3.3 :** Brancher le bouton "Expliquer" sur `explainExpression` et afficher la décomposition sous le clavier
+- [ ] **Tâche 3.4 :** Gérer le cas d'un calcul invalide ou absent avant d'expliquer (message simple à l'utilisateur)
 
 ### Phase Completion Checkpoint — Phase 3
 
@@ -37,8 +40,8 @@ Test runner : Node.js natif (`node --test`), aucune dépendance externe, conform
 
 ## Phase 4 — Déploiement
 
-- [ ] **Tâche 4.1 :** Vérifier que le front-end fonctionne en ouverture directe de `index.html` sans erreur console (hors appel à `/api/explain`, qui nécessite Vercel)
+- [ ] **Tâche 4.1 :** Vérifier que le site fonctionne en ouverture directe de `index.html` sans erreur console
 - [ ] **Tâche 4.2 :** Créer le dépôt GitHub dédié, pousser le code
-- [ ] **Tâche 4.3 :** Connecter le dépôt à Vercel, configurer la variable d'environnement `ANTHROPIC_API_KEY`, déployer et vérifier l'accès via le lien public (y compris le bouton "Expliquer")
+- [ ] **Tâche 4.3 :** Activer GitHub Pages et vérifier l'accès via le lien public
 
 ### Phase Completion Checkpoint — Phase 4
