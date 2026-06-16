@@ -61,10 +61,13 @@ body {
   background: #e8eaed;
 }
 
+.key-zero {
+  grid-column: span 3;
+}
+
 .key-equals {
   background: #4d90fe;
   color: #fff;
-  grid-column: span 4;
 }
 
 .key-equals:hover {
