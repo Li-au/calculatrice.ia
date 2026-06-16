@@ -19,7 +19,7 @@ Test runner : Node.js natif (`node --test`), aucune dépendance externe, conform
 
 - [x] **Tâche 2.1 :** Écrire les tests pour une fonction pure `evaluateExpression(expression)` (addition, soustraction, multiplication, division, pourcentage, gestion des expressions invalides) `[508dadf]`
 - [x] **Tâche 2.2 :** Implémenter `evaluateExpression` `[508dadf]`
-- [ ] **Tâche 2.3 :** Brancher les boutons du clavier (chiffres, opérations, %, C, =) sur la saisie et l'affichage du résultat dans le champ
+- [x] **Tâche 2.3 :** Brancher les boutons du clavier (chiffres, opérations, %, C, =) sur la saisie et l'affichage du résultat dans le champ `[bca23fd]`
 
 ### Phase Completion Checkpoint — Phase 2
 
