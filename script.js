@@ -13,6 +13,7 @@ function closeKeypad() {
 }
 
 display.addEventListener('focus', openKeypad);
+display.addEventListener('click', openKeypad);
 
 document.addEventListener('mousedown', (event) => {
   if (!wrapper.contains(event.target)) {
