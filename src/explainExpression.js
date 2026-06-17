@@ -1,4 +1,4 @@
-const EXPLAIN_TOKEN_PATTERN = /(\d+\.?\d*|[+−×÷%])/g;
+const EXPLAIN_TOKEN_PATTERN = /(\d+\.?\d*|[+−×÷%^])/g;
 
 /**
  * @param {string} expression A calculator expression built from digits and
@@ -52,7 +52,7 @@ function explainExpression(expression) {
 }
 
 function isOperatorForExplain(token) {
-  return token === '+' || token === '−' || token === '×' || token === '÷';
+  return token === '+' || token === '−' || token === '×' || token === '÷' || token === '^';
 }
 
 function applyOperatorForExplain(left, operator, right) {
@@ -68,6 +68,8 @@ function applyOperatorForExplain(left, operator, right) {
         throw new Error('Division par zéro');
       }
       return left / right;
+    case '^':
+      return Math.pow(left, right);
     default:
       throw new Error('Expression invalide');
   }

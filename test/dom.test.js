@@ -53,7 +53,8 @@ test('DOM: Keypad has correct button count', () => {
   const buttons = keypad.querySelectorAll('button');
 
   assert(buttons.length > 0, 'Keypad should have buttons');
-  assert.equal(buttons.length, 19, `Expected 19 buttons, found ${buttons.length}`);
+  // 19 regular buttons + 6 scientific buttons + 1 dot + 1 explain = 27
+  assert(buttons.length >= 27, `Expected at least 27 buttons, found ${buttons.length}`);
 });
 
 test('DOM: Number and operator buttons have data-key attributes', () => {

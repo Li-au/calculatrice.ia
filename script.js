@@ -3,6 +3,10 @@ const wrapper = document.getElementById('calculator-wrapper');
 const keypad = document.getElementById('keypad');
 const explainButton = document.getElementById('explain-button');
 const explanation = document.getElementById('explanation');
+const modeButton = document.getElementById('mode-button');
+const scientificButtons = document.querySelectorAll('.sci-btn');
+
+let isScientificMode = false;
 
 function openKeypad() {
   keypad.classList.add('open');
@@ -63,5 +67,72 @@ explainButton.addEventListener('click', () => {
     showExplanation(explainExpression(display.value));
   } catch {
     showExplanation(['Calcul invalide.']);
+  }
+});
+
+// Mode scientifique
+function toggleScientificMode() {
+  isScientificMode = !isScientificMode;
+
+  scientificButtons.forEach(btn => {
+    btn.hidden = !isScientificMode;
+  });
+
+  modeButton.classList.toggle('active', isScientificMode);
+  modeButton.textContent = isScientificMode ? 'Mode Normal' : 'Mode Scientifique';
+}
+
+modeButton.addEventListener('click', toggleScientificMode);
+
+// Handle scientific function buttons
+document.addEventListener('click', (event) => {
+  const btn = event.target;
+
+  if (btn.classList.contains('sci-btn-sin')) {
+    try {
+      const angle = Number(display.value);
+      display.value = String(sin(angle));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-cos')) {
+    try {
+      const angle = Number(display.value);
+      display.value = String(cos(angle));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-tan')) {
+    try {
+      const angle = Number(display.value);
+      display.value = String(tan(angle));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-sqrt')) {
+    try {
+      const value = Number(display.value);
+      display.value = String(sqrt(value));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-log')) {
+    try {
+      const value = Number(display.value);
+      display.value = String(log(value));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-ln')) {
+    try {
+      const value = Number(display.value);
+      display.value = String(ln(value));
+    } catch {
+      display.value = 'Erreur';
+    }
+  } else if (btn.classList.contains('sci-btn-pow')) {
+    display.value += '^';
+  } else if (btn.classList.contains('sci-btn-pi')) {
+    display.value += String(Math.PI);
   }
 });
