@@ -38,14 +38,16 @@ body {
   grid-template-columns: repeat(4, 1fr);
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  overflow: visible;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  pointer-events: none;
 }
 
 .keypad.open {
   margin-top: 12px;
-  max-height: 400px;
+  max-height: 500px;
   opacity: 1;
+  pointer-events: auto;
 }
 
 .keypad button {
