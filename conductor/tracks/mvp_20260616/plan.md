@@ -31,8 +31,8 @@ Extension de scope décidée le 2026-06-16 (voir `spec.md`) : remplace l'intégr
 
 - [x] **Tâche 3.1 :** Écrire les tests pour une fonction pure `explainExpression(expression, result)` qui décompose le calcul en étapes lisibles `[5a6547f]`
 - [x] **Tâche 3.2 :** Implémenter `explainExpression` `[5a6547f]`
-- [x] **Tâche 3.3 :** Brancher le bouton "Expliquer" sur `explainExpression` et afficher la décomposition sous le clavier `[57a9581]` (à reconfirmer visuellement à la reprise)
-- [ ] **Tâche 3.4 :** Gérer le cas d'un calcul invalide ou absent avant d'expliquer (message simple à l'utilisateur)
+- [x] **Tâche 3.3 :** Brancher le bouton "Expliquer" sur `explainExpression` et afficher la décomposition sous le clavier `[57a9581]` `[b6109b0]`
+- [x] **Tâche 3.4 :** Gérer le cas d'un calcul invalide ou absent avant d'expliquer (message simple à l'utilisateur) `[b6109b0]`
 
 ### Phase Completion Checkpoint — Phase 3
 
