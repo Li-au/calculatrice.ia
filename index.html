@@ -11,46 +11,45 @@
     <div class="search-bar">
       <input type="text" id="display" readonly tabindex="0" aria-label="Calculatrice" placeholder="Calculer...">
     </div>
-    <div class="mode-toggle">
-      <button type="button" id="mode-button" class="mode-btn">Mode Scientifique</button>
-    </div>
-    <div class="keypad" id="keypad">
-      <!-- Scientific buttons (hidden by default) -->
-      <button type="button" class="sci-btn sci-btn-sin" hidden>sin</button>
-      <button type="button" class="sci-btn sci-btn-cos" hidden>cos</button>
-      <button type="button" class="sci-btn sci-btn-tan" hidden>tan</button>
-      <button type="button" class="sci-btn sci-btn-log" hidden>log</button>
-
-      <!-- Main buttons -->
+    <div class="keypad-container">
+      <button type="button" id="mode-button" class="mode-btn" hidden>Sci</button>
+      <div class="keypad" id="keypad">
       <button type="button" data-key="7">7</button>
       <button type="button" data-key="8">8</button>
       <button type="button" data-key="9">9</button>
       <button type="button" data-key="÷">÷</button>
 
-      <button type="button" class="sci-btn sci-btn-sqrt" hidden>√</button>
       <button type="button" data-key="4">4</button>
       <button type="button" data-key="5">5</button>
       <button type="button" data-key="6">6</button>
       <button type="button" data-key="×">×</button>
 
-      <button type="button" class="sci-btn sci-btn-pow" hidden>^</button>
       <button type="button" data-key="1">1</button>
       <button type="button" data-key="2">2</button>
       <button type="button" data-key="3">3</button>
       <button type="button" data-key="−">−</button>
 
-      <button type="button" class="sci-btn sci-btn-ln" hidden>ln</button>
-      <button type="button" data-key="C" class="key-clear">C</button>
-      <button type="button" data-key="backspace" class="key-backspace">⌫</button>
-      <button type="button" data-key="%">%</button>
-      <button type="button" data-key="+">+</button>
-
-      <button type="button" class="sci-btn sci-btn-pi" hidden>π</button>
       <button type="button" class="key-zero" data-key="0">0</button>
       <button type="button" data-key="." class="key-dot">.</button>
       <button type="button" data-key="=" class="key-equals">=</button>
+      <button type="button" data-key="+">+</button>
+
+      <button type="button" data-key="C" class="key-clear">C</button>
+      <button type="button" data-key="backspace" class="key-backspace">⌫</button>
+      <button type="button" data-key="%">%</button>
       <button type="button" id="explain-button" class="key-explain">Expliquer</button>
+
+      <!-- Scientific buttons (hidden by default) -->
+      <button type="button" class="sci-btn sci-btn-sin" hidden>sin</button>
+      <button type="button" class="sci-btn sci-btn-cos" hidden>cos</button>
+      <button type="button" class="sci-btn sci-btn-tan" hidden>tan</button>
+      <button type="button" class="sci-btn sci-btn-log" hidden>log</button>
+      <button type="button" class="sci-btn sci-btn-sqrt" hidden>√</button>
+      <button type="button" class="sci-btn sci-btn-ln" hidden>ln</button>
+      <button type="button" class="sci-btn sci-btn-pow" hidden>^</button>
+      <button type="button" class="sci-btn sci-btn-pi" hidden>π</button>
     </div>
+      </div>
     <div class="explanation" id="explanation" hidden></div>
   </div>
   <script src="src/evaluateExpression.js"></script>

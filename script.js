@@ -10,10 +10,12 @@ let isScientificMode = false;
 
 function openKeypad() {
   keypad.classList.add('open');
+  modeButton.hidden = false;
 }
 
 function closeKeypad() {
   keypad.classList.remove('open');
+  modeButton.hidden = true;
 }
 
 display.addEventListener('focus', openKeypad);

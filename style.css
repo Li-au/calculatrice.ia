@@ -33,6 +33,12 @@ body {
   outline: none;
 }
 
+.keypad-container {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
 .keypad {
   display: grid;
   gap: 8px;
@@ -40,13 +46,13 @@ body {
   max-height: 0;
   opacity: 0;
   overflow: visible;
-  transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
   pointer-events: none;
 }
 
 .keypad.open {
   margin-top: 12px;
-  max-height: 500px;
+  max-height: 420px;
   opacity: 1;
   pointer-events: auto;
 }
@@ -71,10 +77,14 @@ body {
 .key-equals {
   background: #4d90fe;
   color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 2px 4px rgba(77, 144, 254, 0.3);
 }
 
 .key-equals:hover {
   background: #357ae8;
+  box-shadow: 0 4px 8px rgba(77, 144, 254, 0.4);
 }
 
 .key-clear {
@@ -85,7 +95,7 @@ body {
   background: #fff;
   border: 1px solid #4d90fe;
   color: #4d90fe;
-  grid-column: span 4;
+  grid-column: span 1;
 }
 
 .key-explain:hover {
@@ -103,17 +113,27 @@ body {
   margin: 0 0 4px;
 }
 
-.mode-toggle {
-  margin-bottom: 10px;
-}
-
 .mode-btn {
   background: #f1f3f4;
   border: 1px solid #dadce0;
-  border-radius: 4px;
+  border-radius: 24px;
   cursor: pointer;
-  font-size: 12px;
-  padding: 8px 16px;
+  font-size: 11px;
+  padding: 12px 16px;
+  min-width: 50px;
+  text-align: center;
+  transition: all 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  min-width: 0;
+}
+
+.mode-btn:not([hidden]) {
+  max-height: 50px;
+  opacity: 1;
+  padding: 12px 16px;
 }
 
 .mode-btn:hover {
@@ -124,6 +144,10 @@ body {
   background: #4d90fe;
   color: #fff;
   border-color: #4d90fe;
+}
+
+.mode-btn.active:hover {
+  background: #357ae8;
 }
 
 .sci-btn {
