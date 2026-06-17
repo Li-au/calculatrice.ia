@@ -80,16 +80,17 @@ body {
 }
 
 .key-equals {
-  background: #4d90fe;
-  color: #fff;
+  background: #4d90fe !important;
+  color: #fff !important;
   font-weight: bold;
   font-size: 22px;
-  box-shadow: 0 2px 4px rgba(77, 144, 254, 0.3);
+  box-shadow: 0 2px 8px rgba(77, 144, 254, 0.5);
+  border: none !important;
 }
 
 .key-equals:hover {
-  background: #357ae8;
-  box-shadow: 0 4px 8px rgba(77, 144, 254, 0.4);
+  background: #357ae8 !important;
+  box-shadow: 0 4px 12px rgba(77, 144, 254, 0.6);
 }
 
 .key-clear {
