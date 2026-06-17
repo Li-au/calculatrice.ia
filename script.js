@@ -77,7 +77,11 @@ function toggleScientificMode() {
   isScientificMode = !isScientificMode;
 
   scientificButtons.forEach(btn => {
-    btn.hidden = !isScientificMode;
+    if (isScientificMode) {
+      btn.removeAttribute('hidden');
+    } else {
+      btn.setAttribute('hidden', '');
+    }
   });
 
   modeButton.classList.toggle('active', isScientificMode);

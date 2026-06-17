@@ -158,6 +158,13 @@ body {
 .sci-btn {
   background: #e8f0fe;
   color: #1967d2;
+  display: none !important;
+}
+
+.sci-btn:not([hidden]) {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
 .sci-btn:hover {
