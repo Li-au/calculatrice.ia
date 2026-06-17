@@ -10,7 +10,7 @@ body {
 }
 
 .calculator-wrapper {
-  width: 380px;
+  width: 350px;
 }
 
 .search-bar {
@@ -22,11 +22,10 @@ body {
   border-radius: 24px;
   box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1);
   box-sizing: border-box;
-  font-size: 28px;
-  padding: 20px 24px;
+  font-size: 18px;
+  padding: 16px 20px;
   text-align: right;
   width: 100%;
-  font-weight: 500;
 }
 
 #display:focus {
@@ -63,9 +62,9 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 24px;
-  padding: 24px 0;
-  min-height: 60px;
+  font-size: 20px;
+  padding: 18px 0;
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +83,7 @@ body {
   background: #4d90fe;
   color: #fff;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 22px;
   box-shadow: 0 2px 4px rgba(77, 144, 254, 0.3);
 }
 
